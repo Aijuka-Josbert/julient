@@ -1,0 +1,1521 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Julient Tuhaise | Advocate &amp; Senior Counsel, Kampala</title>
+    <meta
+      name="description"
+      content="Julient Tuhaise is a Kampala-based advocate and senior counsel offering trusted legal representation in family law, corporate law, civil litigation and more."
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Poppins:wght@300;400;500;600;700&family=Inter:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/animations.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
+  </head>
+  <body>
+    <!-- ============ PRELOADER ============ -->
+    <div class="preloader" id="preloader" aria-hidden="true">
+      <svg
+        class="seal"
+        width="120"
+        height="120"
+        viewBox="0 0 120 120"
+        fill="none"
+      >
+        <circle
+          class="seal-ring"
+          cx="60"
+          cy="60"
+          r="52"
+          stroke="#C8A45D"
+          stroke-width="1.5"
+        />
+        <circle
+          class="seal-ring-inner"
+          cx="60"
+          cy="60"
+          r="42"
+          stroke="#C8A45D"
+          stroke-width="1"
+        />
+        <text x="60" y="68" text-anchor="middle" class="seal-mono">JN</text>
+      </svg>
+      <p class="preloader-label">Chambers of Julient Tuhaise</p>
+    </div>
+
+    <!-- ============ CUSTOM CURSOR ============ -->
+    <div class="cursor-dot" id="cursorDot"></div>
+    <div class="cursor-ring" id="cursorRing"></div>
+
+    <!-- ============ SCROLL PROGRESS ============ -->
+    <div class="scroll-progress" id="scrollProgress"></div>
+
+    <!-- ============ COOKIE CONSENT ============ -->
+    <div class="cookie-banner" id="cookieBanner">
+      <p>
+        This site uses cookies to remember your preferences, such as light or
+        dark mode, and to understand how visitors use these pages.
+      </p>
+      <div class="cookie-actions">
+        <button class="btn btn-ghost btn-small" id="cookieDecline">
+          Decline
+        </button>
+        <button class="btn btn-gold btn-small" id="cookieAccept">Accept</button>
+      </div>
+    </div>
+
+    <!-- ============ HEADER / NAV ============ -->
+    <header class="site-header" id="siteHeader">
+      <div class="container header-inner">
+        <a href="#home" class="brand">
+          <span class="brand-mark" aria-hidden="true">
+            <svg width="34" height="34" viewBox="0 0 34 34" fill="none">
+              <circle
+                cx="17"
+                cy="17"
+                r="16"
+                stroke="#C8A45D"
+                stroke-width="1.2"
+              />
+              <text x="17" y="22" text-anchor="middle" class="brand-mono">
+                JN
+              </text>
+            </svg>
+          </span>
+          <span class="brand-text">
+            <strong>Julient Tuhaise</strong>
+            <em>Advocate &amp; Senior Counsel</em>
+          </span>
+        </a>
+
+        <nav class="main-nav" id="mainNav" aria-label="Primary">
+          <ul>
+            <li>
+              <a href="#home" class="nav-link active" data-section="home"
+                >Home</a
+              >
+            </li>
+            <li>
+              <a href="#about" class="nav-link" data-section="about">About</a>
+            </li>
+            <li>
+              <a href="#practice" class="nav-link" data-section="practice"
+                >Practice Areas</a
+              >
+            </li>
+            <li>
+              <a href="#career" class="nav-link" data-section="career"
+                >Career</a
+              >
+            </li>
+            <li>
+              <a href="#gallery" class="nav-link" data-section="gallery"
+                >Gallery</a
+              >
+            </li>
+            <li>
+              <a
+                href="#testimonials"
+                class="nav-link"
+                data-section="testimonials"
+                >Testimonials</a
+              >
+            </li>
+            <li>
+              <a href="#insights" class="nav-link" data-section="insights"
+                >Insights</a
+              >
+            </li>
+            <li><a href="#faq" class="nav-link" data-section="faq">FAQ</a></li>
+            <li>
+              <a href="#contact" class="nav-link" data-section="contact"
+                >Contact</a
+              >
+            </li>
+          </ul>
+        </nav>
+
+        <div class="header-actions">
+          <button
+            class="theme-toggle"
+            id="themeToggle"
+            aria-label="Toggle dark mode"
+            aria-pressed="false"
+          >
+            <svg
+              class="icon-sun"
+              width="18"
+              height="18"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.6"
+            >
+              <circle cx="12" cy="12" r="4.2" />
+              <path
+                d="M12 2.5v2.4M12 19.1v2.4M4.2 4.2l1.7 1.7M18.1 18.1l1.7 1.7M2.5 12h2.4M19.1 12h2.4M4.2 19.8l1.7-1.7M18.1 5.9l1.7-1.7"
+              />
+            </svg>
+            <svg
+              class="icon-moon"
+              width="18"
+              height="18"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.6"
+            >
+              <path d="M20 14.5A8.5 8.5 0 1 1 9.5 4a6.8 6.8 0 0 0 10.5 10.5Z" />
+            </svg>
+          </button>
+          <a href="#contact" class="btn btn-gold btn-small header-cta"
+            >Schedule Consultation</a
+          >
+          <button
+            class="nav-toggle"
+            id="navToggle"
+            aria-label="Open menu"
+            aria-expanded="false"
+          >
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main id="top">
+      <!-- ============ HERO ============ -->
+      <section class="hero" id="home">
+        <div class="hero-bg" aria-hidden="true">
+          <canvas id="heroCanvas"></canvas>
+          <div class="hero-bg-gradient"></div>
+        </div>
+
+        <div class="container hero-inner">
+          <div class="hero-copy">
+            <p class="eyebrow reveal">Advocate of the High Court of Uganda</p>
+            <h1 class="hero-title">
+              <span class="line reveal">Counsel that reads</span>
+              <span class="line reveal">the room, and the</span>
+              <span class="line reveal"><em>law,</em> with equal care.</span>
+            </h1>
+            <p class="hero-sub reveal">
+              Fifteen years of representing families, founders and institutions
+              across Kampala &mdash; with the discretion of a confidant and the
+              discipline of a litigator.
+            </p>
+            <div class="hero-actions reveal">
+              <a href="#contact" class="btn btn-gold">Schedule Consultation</a>
+              <a href="#practice" class="btn btn-outline">Practice Areas</a>
+            </div>
+          </div>
+
+          <div class="hero-portrait reveal">
+            <div class="portrait-frame">
+              <div
+                class="img-placeholder portrait-placeholder"
+                data-label="Portrait &mdash; Julient Tuhaise"
+              >
+                <svg
+                  width="52"
+                  height="52"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.2"
+                >
+                  <circle cx="12" cy="8" r="3.6" />
+                  <path d="M4.5 20c1.4-3.8 4.2-5.8 7.5-5.8s6.1 2 7.5 5.8" />
+                </svg>
+              </div>
+            </div>
+            <div class="portrait-badge">
+              <span class="badge-num">15+</span>
+              <span class="badge-label">Years at the Bar</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-stats">
+          <div class="container stats-grid">
+            <div class="stat">
+              <span class="stat-num" data-count="15" data-suffix="+">0</span>
+              <span class="stat-label">Years of Experience</span>
+            </div>
+            <div class="stat">
+              <span class="stat-num" data-count="320" data-suffix="+">0</span>
+              <span class="stat-label">Cases Handled</span>
+            </div>
+            <div class="stat">
+              <span class="stat-num" data-count="500" data-suffix="+">0</span>
+              <span class="stat-label">Clients Served</span>
+            </div>
+            <div class="stat">
+              <span class="stat-num" data-count="98" data-suffix="%">0</span>
+              <span class="stat-label">Client Satisfaction</span>
+            </div>
+          </div>
+        </div>
+
+        <a
+          href="#about"
+          class="scroll-indicator"
+          aria-label="Scroll to About section"
+        >
+          <span class="scroll-indicator-line"></span>
+          <span>Scroll</span>
+        </a>
+      </section>
+
+      <div class="divider" aria-hidden="true">
+        <svg viewBox="0 0 200 24" preserveAspectRatio="none">
+          <line
+            x1="0"
+            y1="12"
+            x2="80"
+            y2="12"
+            stroke="#C8A45D"
+            stroke-width="1"
+          />
+          <circle
+            cx="100"
+            cy="12"
+            r="5"
+            stroke="#C8A45D"
+            stroke-width="1"
+            fill="none"
+          />
+          <path
+            d="M96 12l4-5 4 5-4 5-4-5z"
+            fill="none"
+            stroke="#C8A45D"
+            stroke-width="0.8"
+          />
+          <line
+            x1="120"
+            y1="12"
+            x2="200"
+            y2="12"
+            stroke="#C8A45D"
+            stroke-width="1"
+          />
+        </svg>
+      </div>
+
+      <!-- ============ ABOUT ============ -->
+      <section class="section" id="about">
+        <div class="container about-grid">
+          <div class="about-visual reveal-up">
+            <div
+              class="img-placeholder about-placeholder"
+              data-label="Chambers Interior"
+            >
+              <svg
+                width="46"
+                height="46"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.2"
+              >
+                <path d="M4 21V9l8-6 8 6v12" />
+                <path d="M9 21v-7h6v7" />
+              </svg>
+            </div>
+            <div class="about-visual-accent"></div>
+          </div>
+
+          <div class="about-copy">
+            <p class="eyebrow reveal">About Counsel</p>
+            <h2 class="section-title reveal">
+              A practice built on precision and quiet trust
+            </h2>
+            <p class="reveal">
+              Julient Tuhaise was called to the Uganda Bar in 2011 and has since
+              built a chambers known less for noise and more for outcomes. Her
+              work spans contested land disputes in Wakiso, cross-border
+              corporate structuring, and the kind of family matters that never
+              make it to a headline but change a household for good.
+            </p>
+            <p class="reveal">
+              She approaches every file the same way: understand the human
+              situation before the legal one. That order rarely changes the
+              strategy, but it changes how a client experiences the process.
+            </p>
+
+            <div class="about-values reveal">
+              <div class="value-pill">
+                <span>Mission</span>Resolve disputes before they become wars.
+              </div>
+              <div class="value-pill">
+                <span>Vision</span>A Uganda where sound counsel is accessible,
+                not exclusive.
+              </div>
+              <div class="value-pill">
+                <span>Core Value</span>Candour with clients, even when it is
+                inconvenient.
+              </div>
+            </div>
+
+            <div class="about-timeline reveal">
+              <div class="mini-timeline-item">
+                <span class="mini-year">2009</span>
+                <p>LL.B (Hons), Makerere University</p>
+              </div>
+              <div class="mini-timeline-item">
+                <span class="mini-year">2010</span>
+                <p>Diploma in Legal Practice, Law Development Centre</p>
+              </div>
+              <div class="mini-timeline-item">
+                <span class="mini-year">2011</span>
+                <p>Enrolled as Advocate, High Court of Uganda</p>
+              </div>
+              <div class="mini-timeline-item">
+                <span class="mini-year">2019</span>
+                <p>Conferred Senior Counsel status by the Uganda Law Society</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="divider" aria-hidden="true">
+        <svg viewBox="0 0 200 24" preserveAspectRatio="none">
+          <line
+            x1="0"
+            y1="12"
+            x2="80"
+            y2="12"
+            stroke="#C8A45D"
+            stroke-width="1"
+          />
+          <circle
+            cx="100"
+            cy="12"
+            r="5"
+            stroke="#C8A45D"
+            stroke-width="1"
+            fill="none"
+          />
+          <path
+            d="M96 12l4-5 4 5-4 5-4-5z"
+            fill="none"
+            stroke="#C8A45D"
+            stroke-width="0.8"
+          />
+          <line
+            x1="120"
+            y1="12"
+            x2="200"
+            y2="12"
+            stroke="#C8A45D"
+            stroke-width="1"
+          />
+        </svg>
+      </div>
+
+      <!-- ============ PRACTICE AREAS ============ -->
+      <section class="section section-alt" id="practice">
+        <div class="container">
+          <p class="eyebrow reveal center">What We Handle</p>
+          <h2 class="section-title reveal center">Practice Areas</h2>
+          <p class="section-sub reveal center">
+            Ten areas of focused practice, each handled by counsel who has
+            argued it in court, not just read about it.
+          </p>
+
+          <div class="practice-grid">
+            <!-- Cards injected via loop-like static markup -->
+            <article class="practice-card reveal-up">
+              <span class="practice-icon"
+                ><svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.3"
+                >
+                  <path
+                    d="M12 21s-7-4.4-9.5-9C1 8 3 4 7 4c2 0 4 1.3 5 3 1-1.7 3-3 5-3 4 0 6 4 4.5 8-2.5 4.6-9.5 9-9.5 9Z"
+                  /></svg
+              ></span>
+              <h3>Family Law</h3>
+              <p>
+                Divorce, custody, succession and the delicate matters that
+                follow them.
+              </p>
+              <a href="#contact" class="card-link"
+                >Learn More <span aria-hidden="true">&rarr;</span></a
+              >
+            </article>
+            <article class="practice-card reveal-up">
+              <span class="practice-icon"
+                ><svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.3"
+                >
+                  <path
+                    d="M12 3 4 6v6c0 5 3.4 8.7 8 9 4.6-.3 8-4 8-9V6l-8-3Z"
+                  />
+                  <path d="M9 12l2 2 4-4" /></svg
+              ></span>
+              <h3>Criminal Law</h3>
+              <p>Defence representation from arraignment through appeal.</p>
+              <a href="#contact" class="card-link"
+                >Learn More <span aria-hidden="true">&rarr;</span></a
+              >
+            </article>
+            <article class="practice-card reveal-up">
+              <span class="practice-icon"
+                ><svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.3"
+                >
+                  <path d="M12 2 3 7v3h18V7l-9-5Z" />
+                  <path d="M5 21V10M10 21V10M14 21V10M19 21V10" />
+                  <path d="M3 21h18" /></svg
+              ></span>
+              <h3>Civil Litigation</h3>
+              <p>
+                Contractual and commercial disputes, from pleadings to judgment.
+              </p>
+              <a href="#contact" class="card-link"
+                >Learn More <span aria-hidden="true">&rarr;</span></a
+              >
+            </article>
+            <article class="practice-card reveal-up">
+              <span class="practice-icon"
+                ><svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.3"
+                >
+                  <path
+                    d="M3 12h18M3 12l4-6M3 12l4 6M21 12l-4-6M21 12l-4 6"
+                  /></svg
+              ></span>
+              <h3>Land Law</h3>
+              <p>
+                Title disputes, boundary conflicts and land succession matters.
+              </p>
+              <a href="#contact" class="card-link"
+                >Learn More <span aria-hidden="true">&rarr;</span></a
+              >
+            </article>
+            <article class="practice-card reveal-up">
+              <span class="practice-icon"
+                ><svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.3"
+                >
+                  <path d="M4 21V9l8-6 8 6v12" />
+                  <path d="M9 9h1M9 13h1M14 9h1M14 13h1" /></svg
+              ></span>
+              <h3>Corporate Law</h3>
+              <p>Incorporation, governance, and cross-border structuring.</p>
+              <a href="#contact" class="card-link"
+                >Learn More <span aria-hidden="true">&rarr;</span></a
+              >
+            </article>
+            <article class="practice-card reveal-up">
+              <span class="practice-icon"
+                ><svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.3"
+                >
+                  <circle cx="12" cy="7" r="3" />
+                  <path d="M5 21c0-4 3-6 7-6s7 2 7 6" /></svg
+              ></span>
+              <h3>Labour Law</h3>
+              <p>
+                Employment contracts, termination disputes and workplace policy.
+              </p>
+              <a href="#contact" class="card-link"
+                >Learn More <span aria-hidden="true">&rarr;</span></a
+              >
+            </article>
+            <article class="practice-card reveal-up">
+              <span class="practice-icon"
+                ><svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.3"
+                >
+                  <path
+                    d="M12 2 4 6v5c0 5.4 3.6 9.7 8 11 4.4-1.3 8-5.6 8-11V6l-8-4Z"
+                  /></svg
+              ></span>
+              <h3>Human Rights</h3>
+              <p>Constitutional petitions and advocacy for civil liberties.</p>
+              <a href="#contact" class="card-link"
+                >Learn More <span aria-hidden="true">&rarr;</span></a
+              >
+            </article>
+            <article class="practice-card reveal-up">
+              <span class="practice-icon"
+                ><svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.3"
+                >
+                  <circle cx="12" cy="12" r="9" />
+                  <path
+                    d="M3 12h18M12 3c2.5 2.5 3.8 5.7 3.8 9s-1.3 6.5-3.8 9c-2.5-2.5-3.8-5.7-3.8-9S9.5 5.5 12 3Z"
+                  /></svg
+              ></span>
+              <h3>Immigration</h3>
+              <p>Work permits, residency and citizenship applications.</p>
+              <a href="#contact" class="card-link"
+                >Learn More <span aria-hidden="true">&rarr;</span></a
+              >
+            </article>
+            <article class="practice-card reveal-up">
+              <span class="practice-icon"
+                ><svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.3"
+                >
+                  <path d="M3 10 12 3l9 7" />
+                  <path d="M5 10v10h14V10" />
+                  <path d="M10 20v-6h4v6" /></svg
+              ></span>
+              <h3>Property Law</h3>
+              <p>
+                Sale agreements, tenancy disputes and property due diligence.
+              </p>
+              <a href="#contact" class="card-link"
+                >Learn More <span aria-hidden="true">&rarr;</span></a
+              >
+            </article>
+            <article class="practice-card reveal-up">
+              <span class="practice-icon"
+                ><svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.3"
+                >
+                  <path d="M4 4h16v16H4z" />
+                  <path d="M8 9h8M8 13h5" /></svg
+              ></span>
+              <h3>Legal Consultancy</h3>
+              <p>Retained advisory for founders, boards and family estates.</p>
+              <a href="#contact" class="card-link"
+                >Learn More <span aria-hidden="true">&rarr;</span></a
+              >
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ WHY CHOOSE ME ============ -->
+      <section class="section" id="why">
+        <div class="container">
+          <p class="eyebrow reveal center">Working Together</p>
+          <h2 class="section-title reveal center">
+            Why clients stay with this chambers
+          </h2>
+
+          <div class="why-grid">
+            <div class="why-card reveal-up">
+              <span class="why-icon">01</span>
+              <h3>Integrity</h3>
+              <p>Advice is never shaped by what a client wants to hear.</p>
+            </div>
+            <div class="why-card reveal-up">
+              <span class="why-icon">02</span>
+              <h3>Confidentiality</h3>
+              <p>What is shared in chambers stays in chambers.</p>
+            </div>
+            <div class="why-card reveal-up">
+              <span class="why-icon">03</span>
+              <h3>Professionalism</h3>
+              <p>Deadlines are commitments, not suggestions.</p>
+            </div>
+            <div class="why-card reveal-up">
+              <span class="why-icon">04</span>
+              <h3>Strategic Thinking</h3>
+              <p>Every filing serves a position three moves ahead.</p>
+            </div>
+            <div class="why-card reveal-up">
+              <span class="why-icon">05</span>
+              <h3>Client-Centred Service</h3>
+              <p>The client's goals set the strategy, not the reverse.</p>
+            </div>
+            <div class="why-card reveal-up">
+              <span class="why-icon">06</span>
+              <h3>Transparency</h3>
+              <p>Costs and likely outcomes are discussed plainly, upfront.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="divider" aria-hidden="true">
+        <svg viewBox="0 0 200 24" preserveAspectRatio="none">
+          <line
+            x1="0"
+            y1="12"
+            x2="80"
+            y2="12"
+            stroke="#C8A45D"
+            stroke-width="1"
+          />
+          <circle
+            cx="100"
+            cy="12"
+            r="5"
+            stroke="#C8A45D"
+            stroke-width="1"
+            fill="none"
+          />
+          <path
+            d="M96 12l4-5 4 5-4 5-4-5z"
+            fill="none"
+            stroke="#C8A45D"
+            stroke-width="0.8"
+          />
+          <line
+            x1="120"
+            y1="12"
+            x2="200"
+            y2="12"
+            stroke="#C8A45D"
+            stroke-width="1"
+          />
+        </svg>
+      </div>
+
+      <!-- ============ CAREER HIGHLIGHTS ============ -->
+      <section class="section section-alt" id="career">
+        <div class="container">
+          <p class="eyebrow reveal center">Career Highlights</p>
+          <h2 class="section-title reveal center">Fifteen years, in brief</h2>
+
+          <div class="timeline">
+            <div class="timeline-item reveal-up left">
+              <div class="timeline-dot"></div>
+              <div class="timeline-content">
+                <span class="mini-year">2011</span>
+                <h3>Called to the Bar</h3>
+                <p>
+                  Enrolled as an Advocate of the High Court of Uganda and joined
+                  a mid-size Kampala firm as an associate.
+                </p>
+              </div>
+            </div>
+            <div class="timeline-item reveal-up right">
+              <div class="timeline-dot"></div>
+              <div class="timeline-content">
+                <span class="mini-year">2014</span>
+                <h3>First Reported Judgment</h3>
+                <p>
+                  Led a land succession matter that established a cited
+                  precedent on customary inheritance.
+                </p>
+              </div>
+            </div>
+            <div class="timeline-item reveal-up left">
+              <div class="timeline-dot"></div>
+              <div class="timeline-content">
+                <span class="mini-year">2016</span>
+                <h3>Founded Independent Chambers</h3>
+                <p>
+                  Opened a solo practice in Kampala focused on family, land and
+                  corporate advisory work.
+                </p>
+              </div>
+            </div>
+            <div class="timeline-item reveal-up right">
+              <div class="timeline-dot"></div>
+              <div class="timeline-content">
+                <span class="mini-year">2019</span>
+                <h3>Conferred Senior Counsel</h3>
+                <p>
+                  Recognised by the Uganda Law Society for sustained
+                  contribution to the profession.
+                </p>
+              </div>
+            </div>
+            <div class="timeline-item reveal-up left">
+              <div class="timeline-dot"></div>
+              <div class="timeline-content">
+                <span class="mini-year">2022</span>
+                <h3>Published Legal Commentary</h3>
+                <p>
+                  Contributed a chapter on land succession reform to a East
+                  African law review.
+                </p>
+              </div>
+            </div>
+            <div class="timeline-item reveal-up right">
+              <div class="timeline-dot"></div>
+              <div class="timeline-content">
+                <span class="mini-year">2025</span>
+                <h3>Community Legal Aid Programme</h3>
+                <p>
+                  Launched a pro bono clinic offering free consultations to
+                  residents of Wakiso district.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ GALLERY ============ -->
+      <section class="section" id="gallery">
+        <div class="container">
+          <p class="eyebrow reveal center">In Practice</p>
+          <h2 class="section-title reveal center">Gallery</h2>
+
+          <div class="gallery-filters reveal center">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="court">
+              Court Appearances
+            </button>
+            <button class="filter-btn" data-filter="conference">
+              Conferences
+            </button>
+            <button class="filter-btn" data-filter="community">
+              Community
+            </button>
+          </div>
+
+          <div class="gallery-grid" id="galleryGrid">
+            <div class="gallery-item reveal-up" data-cat="court">
+              <div
+                class="img-placeholder gallery-placeholder"
+                data-label="Court Appearance, Kampala High Court"
+              ></div>
+            </div>
+            <div class="gallery-item reveal-up" data-cat="conference">
+              <div
+                class="img-placeholder gallery-placeholder"
+                data-label="East Africa Law Society Conference"
+              ></div>
+            </div>
+            <div class="gallery-item reveal-up" data-cat="community">
+              <div
+                class="img-placeholder gallery-placeholder"
+                data-label="Wakiso Legal Aid Clinic"
+              ></div>
+            </div>
+            <div class="gallery-item reveal-up" data-cat="court">
+              <div
+                class="img-placeholder gallery-placeholder"
+                data-label="Chambers, Client Meeting"
+              ></div>
+            </div>
+            <div class="gallery-item reveal-up" data-cat="conference">
+              <div
+                class="img-placeholder gallery-placeholder"
+                data-label="Panel Discussion, Uganda Law Society"
+              ></div>
+            </div>
+            <div class="gallery-item reveal-up" data-cat="community">
+              <div
+                class="img-placeholder gallery-placeholder"
+                data-label="Community Outreach, Mukono"
+              ></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Lightbox -->
+      <div class="lightbox" id="lightbox" aria-hidden="true">
+        <button class="lightbox-close" id="lightboxClose" aria-label="Close">
+          &times;
+        </button>
+        <div class="lightbox-content">
+          <div
+            class="img-placeholder lightbox-placeholder"
+            id="lightboxImg"
+          ></div>
+          <p id="lightboxCaption"></p>
+        </div>
+      </div>
+
+      <div class="divider" aria-hidden="true">
+        <svg viewBox="0 0 200 24" preserveAspectRatio="none">
+          <line
+            x1="0"
+            y1="12"
+            x2="80"
+            y2="12"
+            stroke="#C8A45D"
+            stroke-width="1"
+          />
+          <circle
+            cx="100"
+            cy="12"
+            r="5"
+            stroke="#C8A45D"
+            stroke-width="1"
+            fill="none"
+          />
+          <path
+            d="M96 12l4-5 4 5-4 5-4-5z"
+            fill="none"
+            stroke="#C8A45D"
+            stroke-width="0.8"
+          />
+          <line
+            x1="120"
+            y1="12"
+            x2="200"
+            y2="12"
+            stroke="#C8A45D"
+            stroke-width="1"
+          />
+        </svg>
+      </div>
+
+      <!-- ============ TESTIMONIALS ============ -->
+      <section class="section section-alt" id="testimonials">
+        <div class="container">
+          <p class="eyebrow reveal center">Client Word</p>
+          <h2 class="section-title reveal center">Testimonials</h2>
+
+          <div class="testimonial-slider">
+            <div class="testimonial-track" id="testimonialTrack">
+              <div class="testimonial-slide active">
+                <div class="stars" aria-label="5 out of 5 stars">
+                  &#9733;&#9733;&#9733;&#9733;&#9733;
+                </div>
+                <p>
+                  "She handled our land dispute with a patience I did not expect
+                  from a litigator. We won, but more than that, we understood
+                  why at every step."
+                </p>
+                <div class="testimonial-author">
+                  <div
+                    class="img-placeholder avatar-placeholder"
+                    data-label=""
+                  ></div>
+                  <div>
+                    <strong>Patrick Ssemwogerere</strong
+                    ><span>Land Dispute Client</span>
+                  </div>
+                </div>
+              </div>
+              <div class="testimonial-slide">
+                <div class="stars" aria-label="5 out of 5 stars">
+                  &#9733;&#9733;&#9733;&#9733;&#9733;
+                </div>
+                <p>
+                  "Our company's contracts were a mess before she restructured
+                  them. Two years on, we have not had a single dispute reach
+                  litigation."
+                </p>
+                <div class="testimonial-author">
+                  <div
+                    class="img-placeholder avatar-placeholder"
+                    data-label=""
+                  ></div>
+                  <div>
+                    <strong>Grace Achola</strong
+                    ><span>Managing Director, Retail Group</span>
+                  </div>
+                </div>
+              </div>
+              <div class="testimonial-slide">
+                <div class="stars" aria-label="5 out of 5 stars">
+                  &#9733;&#9733;&#9733;&#9733;&#9733;
+                </div>
+                <p>
+                  "A difficult custody matter, handled without drama and with
+                  real regard for my children. I recommend her without
+                  hesitation."
+                </p>
+                <div class="testimonial-author">
+                  <div
+                    class="img-placeholder avatar-placeholder"
+                    data-label=""
+                  ></div>
+                  <div>
+                    <strong>Moses Okwir</strong><span>Family Law Client</span>
+                  </div>
+                </div>
+              </div>
+              <div class="testimonial-slide">
+                <div class="stars" aria-label="5 out of 5 stars">
+                  &#9733;&#9733;&#9733;&#9733;&#9733;
+                </div>
+                <p>
+                  "Direct, prepared, and never once billed for time she had not
+                  spent. That alone sets her apart in this city."
+                </p>
+                <div class="testimonial-author">
+                  <div
+                    class="img-placeholder avatar-placeholder"
+                    data-label=""
+                  ></div>
+                  <div>
+                    <strong>Rebecca Nansubuga</strong><span>Estate Client</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="testimonial-dots" id="testimonialDots"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ INSIGHTS / BLOG ============ -->
+      <section class="section" id="insights">
+        <div class="container">
+          <p class="eyebrow reveal center">Legal Insights</p>
+          <h2 class="section-title reveal center">From the Chambers Desk</h2>
+
+          <div class="insights-search reveal center">
+            <input
+              type="text"
+              id="insightSearch"
+              placeholder="Search insights, e.g. land, labour, family"
+              aria-label="Search legal insights"
+            />
+          </div>
+
+          <div class="insights-grid" id="insightsGrid">
+            <article
+              class="insight-card reveal-up"
+              data-tags="land succession property"
+            >
+              <div
+                class="img-placeholder insight-placeholder"
+                data-label="Land Succession"
+              ></div>
+              <span class="insight-cat">Land Law</span>
+              <h3>Understanding Land Succession Disputes in Uganda</h3>
+              <p>
+                What families should settle before a title becomes a courtroom
+                matter.
+              </p>
+              <a href="#contact" class="card-link"
+                >Read More <span aria-hidden="true">&rarr;</span></a
+              >
+            </article>
+            <article
+              class="insight-card reveal-up"
+              data-tags="labour employment corporate"
+            >
+              <div
+                class="img-placeholder insight-placeholder"
+                data-label="Labour Law"
+              ></div>
+              <span class="insight-cat">Labour Law</span>
+              <h3>New Labour Law Amendments: What Employers Must Know</h3>
+              <p>
+                A practical read on the clauses that most often trip up small
+                employers.
+              </p>
+              <a href="#contact" class="card-link"
+                >Read More <span aria-hidden="true">&rarr;</span></a
+              >
+            </article>
+            <article
+              class="insight-card reveal-up"
+              data-tags="family mediation divorce"
+            >
+              <div
+                class="img-placeholder insight-placeholder"
+                data-label="Family Mediation"
+              ></div>
+              <span class="insight-cat">Family Law</span>
+              <h3>Navigating Family Mediation Before Filing in Court</h3>
+              <p>
+                Why mediation is often faster, cheaper, and kinder than
+                litigation.
+              </p>
+              <a href="#contact" class="card-link"
+                >Read More <span aria-hidden="true">&rarr;</span></a
+              >
+            </article>
+          </div>
+          <p class="insights-empty" id="insightsEmpty" hidden>
+            No insights match that search.
+          </p>
+        </div>
+      </section>
+
+      <div class="divider" aria-hidden="true">
+        <svg viewBox="0 0 200 24" preserveAspectRatio="none">
+          <line
+            x1="0"
+            y1="12"
+            x2="80"
+            y2="12"
+            stroke="#C8A45D"
+            stroke-width="1"
+          />
+          <circle
+            cx="100"
+            cy="12"
+            r="5"
+            stroke="#C8A45D"
+            stroke-width="1"
+            fill="none"
+          />
+          <path
+            d="M96 12l4-5 4 5-4 5-4-5z"
+            fill="none"
+            stroke="#C8A45D"
+            stroke-width="0.8"
+          />
+          <line
+            x1="120"
+            y1="12"
+            x2="200"
+            y2="12"
+            stroke="#C8A45D"
+            stroke-width="1"
+          />
+        </svg>
+      </div>
+
+      <!-- ============ FAQ ============ -->
+      <section class="section section-alt" id="faq">
+        <div class="container faq-wrap">
+          <p class="eyebrow reveal center">Common Questions</p>
+          <h2 class="section-title reveal center">
+            Frequently Asked Questions
+          </h2>
+
+          <div class="accordion" id="accordion">
+            <div class="accordion-item reveal-up">
+              <button class="accordion-trigger" aria-expanded="false">
+                <span>How is your consultation fee structured?</span>
+                <span class="accordion-icon">+</span>
+              </button>
+              <div class="accordion-panel">
+                <p>
+                  The first consultation is a fixed fee, discussed upfront by
+                  phone or email before any meeting is booked. Fees beyond that
+                  depend on the nature and length of the matter, and are always
+                  agreed in writing before work begins.
+                </p>
+              </div>
+            </div>
+            <div class="accordion-item reveal-up">
+              <button class="accordion-trigger" aria-expanded="false">
+                <span>Do you take on cases outside Kampala?</span>
+                <span class="accordion-icon">+</span>
+              </button>
+              <div class="accordion-panel">
+                <p>
+                  Yes. Most instructions come from Kampala and Wakiso, but the
+                  chambers regularly represents clients across Central Uganda,
+                  and can arrange remote consultations for clients further
+                  afield.
+                </p>
+              </div>
+            </div>
+            <div class="accordion-item reveal-up">
+              <button class="accordion-trigger" aria-expanded="false">
+                <span>How long does a typical civil case take?</span>
+                <span class="accordion-icon">+</span>
+              </button>
+              <div class="accordion-panel">
+                <p>
+                  It depends heavily on the court's calendar and whether the
+                  matter settles. A straightforward civil claim can resolve in
+                  months; a contested land matter can take years. An honest
+                  timeline is given at the outset, not promised for marketing's
+                  sake.
+                </p>
+              </div>
+            </div>
+            <div class="accordion-item reveal-up">
+              <button class="accordion-trigger" aria-expanded="false">
+                <span
+                  >Can you help with contracts before a dispute arises?</span
+                >
+                <span class="accordion-icon">+</span>
+              </button>
+              <div class="accordion-panel">
+                <p>
+                  Preventative work is preferred to litigation. The chambers
+                  regularly reviews and drafts contracts, shareholder agreements
+                  and employment policies for businesses that want to avoid
+                  disputes altogether.
+                </p>
+              </div>
+            </div>
+            <div class="accordion-item reveal-up">
+              <button class="accordion-trigger" aria-expanded="false">
+                <span>Is everything I share kept confidential?</span>
+                <span class="accordion-icon">+</span>
+              </button>
+              <div class="accordion-panel">
+                <p>
+                  Yes, under both professional conduct rules and the standard
+                  terms of engagement. Nothing shared in a consultation is
+                  discussed outside chambers without the client's written
+                  consent.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ CONTACT ============ -->
+      <section class="section" id="contact">
+        <div class="container contact-grid">
+          <div class="contact-info reveal-up">
+            <p class="eyebrow">Get In Touch</p>
+            <h2 class="section-title">Start with a conversation</h2>
+            <p>
+              Most matters begin with a short call. There is no obligation, and
+              no pressure &mdash; only a clear sense of where things stand and
+              what the options are.
+            </p>
+
+            <ul class="contact-list">
+              <li>
+                <span class="contact-icon"
+                  ><svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.3"
+                  >
+                    <path
+                      d="M12 21s-7-4.4-9.5-9C1 8 3 4 7 4c2 0 4 1.3 5 3 1-1.7 3-3 5-3 4 0 6 4 4.5 8-2.5 4.6-9.5 9-9.5 9Z"
+                    /></svg
+                ></span>
+                <div>
+                  <strong>Office Address</strong
+                  ><span>Plot 14, Kampala Road, Kampala, Uganda</span>
+                </div>
+              </li>
+              <li>
+                <span class="contact-icon"
+                  ><svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.3"
+                  >
+                    <path
+                      d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.7a2 2 0 0 1-.5 2.1L8 9.7a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.5 2.7.6a2 2 0 0 1 1.7 2Z"
+                    /></svg
+                ></span>
+                <div><strong>Phone</strong><span>+256700611489</span></div>
+              </li>
+              <li>
+                <span class="contact-icon"
+                  ><svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.3"
+                  >
+                    <rect x="3" y="5" width="18" height="14" rx="2" />
+                    <path d="m3 7 9 6 9-6" /></svg
+                ></span>
+                <div>
+                  <strong>Email</strong><span>chambers@nabirye-law.ug</span>
+                </div>
+              </li>
+              <li>
+                <span class="contact-icon"
+                  ><svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.3"
+                  >
+                    <circle cx="12" cy="12" r="9" />
+                    <path d="M12 7v5l3 2" /></svg
+                ></span>
+                <div>
+                  <strong>Working Hours</strong
+                  ><span>Mon &ndash; Fri, 8:30am &ndash; 5:30pm</span>
+                </div>
+              </li>
+              <li>
+                <span class="contact-icon"
+                  ><svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.3"
+                  >
+                    <path
+                      d="M12 22c5.5-3.4 8-7.3 8-11.5A8 8 0 1 0 4 10.5C4 14.7 6.5 18.6 12 22Z"
+                    />
+                    <circle cx="12" cy="10" r="2.4" /></svg
+                ></span>
+                <div>
+                  <strong>Emergency Contact</strong
+                  ><span>Urgent custodial matters: +256700611489</span>
+                </div>
+              </li>
+            </ul>
+
+            <div class="social-row">
+              <a href="#" aria-label="LinkedIn" class="social-icon"
+                ><svg viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M4.98 3.5a2 2 0 1 1 0 4 2 2 0 0 1 0-4ZM3 9h4v12H3zM9 9h3.8v1.7h.05c.53-1 1.83-2 3.77-2 4 0 4.75 2.6 4.75 6.1V21H17.5v-5.6c0-1.3 0-3-1.85-3s-2.15 1.4-2.15 2.9V21H9.5Z"
+                  /></svg
+              ></a>
+              <a href="#" aria-label="Twitter" class="social-icon"
+                ><svg viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M22 5.9c-.7.3-1.5.6-2.3.7a4 4 0 0 0 1.8-2.2 8 8 0 0 1-2.5 1 4 4 0 0 0-6.9 3.6A11.4 11.4 0 0 1 3.9 4.6a4 4 0 0 0 1.3 5.4c-.6 0-1.2-.2-1.7-.5v.1a4 4 0 0 0 3.2 4 4 4 0 0 1-1.8.1 4 4 0 0 0 3.8 2.8A8.1 8.1 0 0 1 2 18.4a11.4 11.4 0 0 0 6.2 1.8c7.4 0 11.5-6.2 11.5-11.5v-.5c.8-.6 1.5-1.3 2.3-2.3Z"
+                  /></svg
+              ></a>
+              <a href="#" aria-label="Instagram" class="social-icon"
+                ><svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.4"
+                >
+                  <rect x="3" y="3" width="18" height="18" rx="5" />
+                  <circle cx="12" cy="12" r="4" />
+                  <circle cx="17.2" cy="6.8" r="1" /></svg
+              ></a>
+            </div>
+          </div>
+
+          <div class="contact-form-wrap reveal-up">
+            <form id="contactForm" class="contact-form" novalidate>
+              <div class="form-row">
+                <div class="form-field">
+                  <label for="fullName">Full Name</label>
+                  <input type="text" id="fullName" name="fullName" required />
+                  <span class="field-error" id="err-fullName"></span>
+                </div>
+                <div class="form-field">
+                  <label for="email">Email Address</label>
+                  <input type="email" id="email" name="email" required />
+                  <span class="field-error" id="err-email"></span>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-field">
+                  <label for="phone">Phone Number</label>
+                  <input type="tel" id="phone" name="phone" />
+                </div>
+                <div class="form-field">
+                  <label for="area">Practice Area</label>
+                  <select id="area" name="area">
+                    <option value="">Select an area</option>
+                    <option>Family Law</option>
+                    <option>Criminal Law</option>
+                    <option>Civil Litigation</option>
+                    <option>Land Law</option>
+                    <option>Corporate Law</option>
+                    <option>Labour Law</option>
+                    <option>Human Rights</option>
+                    <option>Immigration</option>
+                    <option>Property Law</option>
+                    <option>Legal Consultancy</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-field">
+                <label for="message">How can we help?</label>
+                <textarea
+                  id="message"
+                  name="message"
+                  rows="4"
+                  required
+                ></textarea>
+                <span class="field-error" id="err-message"></span>
+              </div>
+              <button type="submit" class="btn btn-gold btn-full">
+                Send Message
+              </button>
+              <p class="form-success" id="formSuccess" hidden>
+                Thank you. Your message has been received; expect a reply within
+                one business day.
+              </p>
+            </form>
+          </div>
+        </div>
+
+        <!-- <div class="container">
+          <div
+            class="map-placeholder reveal-up"
+            data-label="Map &mdash; Plot 14, Kampala Road, Kampala"
+          >
+            <svg
+              width="30"
+              height="30"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.3"
+            >
+              <path d="M12 22s7-7.4 7-13a7 7 0 1 0-14 0c0 5.6 7 13 7 13Z" />
+              <circle cx="12" cy="9" r="2.6" />
+            </svg>
+          </div>
+        </div> -->
+      </section>
+    </main>
+
+    <!-- ============ FOOTER ============ -->
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div class="footer-col footer-brand">
+          <a href="#home" class="brand">
+            <span class="brand-mark" aria-hidden="true">
+              <svg width="30" height="30" viewBox="0 0 34 34" fill="none">
+                <circle
+                  cx="17"
+                  cy="17"
+                  r="16"
+                  stroke="#C8A45D"
+                  stroke-width="1.2"
+                />
+                <text x="17" y="22" text-anchor="middle" class="brand-mono">
+                  JT
+                </text>
+              </svg>
+            </span>
+            <span class="brand-text">
+              <strong>Julient Tuhaise</strong>
+              <em>Advocate &amp; Senior Counsel</em>
+            </span>
+          </a>
+          <p>Trusted legal counsel in Kampala, Uganda, since 2011.</p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#career">Career</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#testimonials">Testimonials</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Practice Areas</h4>
+          <ul>
+            <li><a href="#practice">Family Law</a></li>
+            <li><a href="#practice">Corporate Law</a></li>
+            <li><a href="#practice">Land Law</a></li>
+            <li><a href="#practice">Civil Litigation</a></li>
+            <li><a href="#practice">Immigration</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col footer-newsletter">
+          <!-- <h4>Newsletter</h4>
+          <p>Occasional notes on Ugandan law, sent a few times a year.</p>
+          <form class="newsletter-form" id="newsletterForm">
+            <input
+              type="email"
+              placeholder="Your email address"
+              aria-label="Email address"
+              required
+            />
+            <button type="submit" class="btn btn-outline btn-small">
+              Subscribe
+            </button>
+          </form> -->
+          <div class="social-row footer-newsletter">
+            <h4>Follow Me</h4>
+            <a href="#" aria-label="LinkedIn" class="social-icon small"
+              ><svg viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M4.98 3.5a2 2 0 1 1 0 4 2 2 0 0 1 0-4ZM3 9h4v12H3zM9 9h3.8v1.7h.05c.53-1 1.83-2 3.77-2 4 0 4.75 2.6 4.75 6.1V21H17.5v-5.6c0-1.3 0-3-1.85-3s-2.15 1.4-2.15 2.9V21H9.5Z"
+                /></svg
+            ></a>
+            <a href="#" aria-label="Twitter" class="social-icon small"
+              ><svg viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M22 5.9c-.7.3-1.5.6-2.3.7a4 4 0 0 0 1.8-2.2 8 8 0 0 1-2.5 1 4 4 0 0 0-6.9 3.6A11.4 11.4 0 0 1 3.9 4.6a4 4 0 0 0 1.3 5.4c-.6 0-1.2-.2-1.7-.5v.1a4 4 0 0 0 3.2 4 4 4 0 0 1-1.8.1 4 4 0 0 0 3.8 2.8A8.1 8.1 0 0 1 2 18.4a11.4 11.4 0 0 0 6.2 1.8c7.4 0 11.5-6.2 11.5-11.5v-.5c.8-.6 1.5-1.3 2.3-2.3Z"
+                /></svg
+            ></a>
+            <a href="#" aria-label="Instagram" class="social-icon small"
+              ><svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.4"
+              >
+                <rect x="3" y="3" width="18" height="18" rx="5" />
+                <circle cx="12" cy="12" r="4" />
+                <circle cx="17.2" cy="6.8" r="1" /></svg
+            ></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="container footer-bottom-inner">
+          <p>
+            &copy; <span id="year"></span> Julient Tuhaise Advocates. All rights
+            reserved.
+          </p>
+          <ul>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms</a></li>
+            <li><a href="#">Sitemap</a></li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+
+    <!-- ============ FLOATING ACTIONS ============ -->
+    <a
+      href="https://wa.me/256700611489"
+      target="_blank"
+      rel="noopener"
+      class="whatsapp-float"
+      aria-label="Chat on WhatsApp"
+    >
+      <svg viewBox="0 0 24 24" fill="currentColor">
+        <path
+          d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3.1.8.8-3-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1-.2.2-.7.8-.8.9-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-2-1.2 7.4 7.4 0 0 1-1.4-1.7c-.1-.2 0-.4.1-.5l.4-.5.2-.4c0-.1 0-.3 0-.4L9 8.5c-.2-.4-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 2.9 2.9 0 0 0-.9 2.2c0 1.3.9 2.6 1 2.8.1.2 1.8 2.8 4.4 3.9.6.3 1.1.4 1.5.5.6.2 1.1.2 1.6.1.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2-.1-.1-.2-.2-.4-.3Z"
+        />
+      </svg>
+    </a>
+
+    <button class="scroll-top" id="scrollTop" aria-label="Back to top">
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.6"
+      >
+        <path d="M12 19V5M6 11l6-6 6 6" />
+      </svg>
+    </button>
+
+    <script src="js/animations.js"></script>
+    <script src="js/validation.js"></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>

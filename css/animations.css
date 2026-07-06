@@ -1,0 +1,65 @@
+/* ==========================================================================
+   Animations & Micro-interactions
+   ========================================================================== */
+
+/* Scroll reveal base states */
+.reveal, .reveal-up {
+  opacity: 0;
+  transition: opacity 0.7s var(--ease), transform 0.7s var(--ease);
+}
+.reveal { transform: translateY(8px); }
+.reveal-up { transform: translateY(20px); }
+
+.reveal.in-view, .reveal-up.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* stagger children inside grids */
+.practice-grid .practice-card:nth-child(1) { transition-delay: .02s; }
+.practice-grid .practice-card:nth-child(2) { transition-delay: .08s; }
+.practice-grid .practice-card:nth-child(3) { transition-delay: .14s; }
+.practice-grid .practice-card:nth-child(4) { transition-delay: .2s; }
+.practice-grid .practice-card:nth-child(5) { transition-delay: .26s; }
+.practice-grid .practice-card:nth-child(6) { transition-delay: .32s; }
+.practice-grid .practice-card:nth-child(7) { transition-delay: .38s; }
+.practice-grid .practice-card:nth-child(8) { transition-delay: .44s; }
+.practice-grid .practice-card:nth-child(9) { transition-delay: .5s; }
+.practice-grid .practice-card:nth-child(10) { transition-delay: .56s; }
+
+.why-grid .why-card:nth-child(1) { transition-delay: .02s; }
+.why-grid .why-card:nth-child(2) { transition-delay: .08s; }
+.why-grid .why-card:nth-child(3) { transition-delay: .14s; }
+.why-grid .why-card:nth-child(4) { transition-delay: .2s; }
+.why-grid .why-card:nth-child(5) { transition-delay: .26s; }
+.why-grid .why-card:nth-child(6) { transition-delay: .32s; }
+
+.gallery-grid .gallery-item:nth-child(1) { transition-delay: .02s; }
+.gallery-grid .gallery-item:nth-child(2) { transition-delay: .08s; }
+.gallery-grid .gallery-item:nth-child(3) { transition-delay: .14s; }
+.gallery-grid .gallery-item:nth-child(4) { transition-delay: .2s; }
+.gallery-grid .gallery-item:nth-child(5) { transition-delay: .26s; }
+.gallery-grid .gallery-item:nth-child(6) { transition-delay: .32s; }
+
+.insights-grid .insight-card:nth-child(1) { transition-delay: .02s; }
+.insights-grid .insight-card:nth-child(2) { transition-delay: .1s; }
+.insights-grid .insight-card:nth-child(3) { transition-delay: .18s; }
+
+/* Fade the hero lines in with a slight cascade, handled via JS adding .in-view but
+   with individual delay set inline through nth-child for a typed feel */
+.hero-title .line:nth-child(1) { transition-delay: .1s; }
+.hero-title .line:nth-child(2) { transition-delay: .22s; }
+.hero-title .line:nth-child(3) { transition-delay: .34s; }
+.hero-copy .eyebrow { transition-delay: 0s; }
+.hero-sub { transition-delay: .46s; }
+.hero-actions { transition-delay: .58s; }
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .reveal, .reveal-up, .practice-card, .gallery-placeholder, .testimonial-slide, .btn, .accordion-panel {
+    transition-duration: .01ms !important;
+    animation-duration: .01ms !important;
+  }
+  .scroll-indicator-line { animation: none; }
+}
