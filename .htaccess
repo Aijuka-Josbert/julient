@@ -1,9 +1,134 @@
-<FilesMatch "\.(html|htm)$">
-    Header set Cache-Control "no-cache, no-store, must-revalidate"
-    Header set Pragma "no-cache"
-    Header set Expires "0"
+# ============================================================================
+# .htaccess – Security, Performance, and URL Rewriting
+# For Julient Tuhaise Advocates Website
+# ============================================================================
+
+# Enable URL rewriting
+RewriteEngine On
+
+# ========================================
+# 1. CACHE CONTROL FOR STATIC ASSETS
+# ========================================
+
+<IfModule mod_headers.c>
+    # Cache static assets for 30 days (images, CSS, JS, fonts)
+    <FilesMatch "\.(css|js|jpg|jpeg|png|gif|svg|ico|webp|woff|woff2|ttf|eot)$">
+        Header set Cache-Control "max-age=2592000, public, immutable"
+    </FilesMatch>
+    
+    # Cache HTML files for 1 hour (revalidate frequently)
+    <FilesMatch "\.(html|htm)$">
+        Header set Cache-Control "max-age=3600, must-revalidate"
+    </FilesMatch>
+</IfModule>
+
+# ========================================
+# 2. HIDE .html EXTENSION (Clean URLs)
+# ========================================
+
+# Redirect URLs with .html to clean URL (SEO friendly, 301 permanent)
+RewriteCond %{THE_REQUEST} \.html [NC]
+RewriteRule ^(.*)\.html$ /$1 [R=301,L,NC]
+
+# Internally serve .html files when clean URL is requested
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^([^/]+)/?$ $1.html [L,NC]
+
+# Serve index.html for root domain
+RewriteRule ^$ index.html [L]
+
+# ========================================
+# 3. SECURITY HEADERS
+# ========================================
+
+<IfModule mod_headers.c>
+    # Prevent MIME type sniffing (security)
+    Header set X-Content-Type-Options "nosniff"
+    
+    # Prevent clickjacking (security)
+    Header set X-Frame-Options "DENY"
+    
+    # Enable XSS protection (security)
+    Header set X-XSS-Protection "1; mode=block"
+    
+    # Control referrer information (privacy)
+    Header set Referrer-Policy "strict-origin-when-cross-origin"
+    
+    # Enable HTTP Strict Transport Security (force HTTPS – uncomment when SSL is active)
+    # Header set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
+    
+    # Prevent browsers from caching sensitive pages (login, forms, etc.)
+    <FilesMatch "\.(html|htm|php)$">
+        Header set Cache-Control "no-cache, no-store, must-revalidate"
+        Header set Pragma "no-cache"
+        Header set Expires "0"
+    </FilesMatch>
+</IfModule>
+
+# ========================================
+# 4. DISABLE DIRECTORY BROWSING (Security)
+# ========================================
+
+# Prevent users from seeing folder contents
+Options -Indexes
+
+# ========================================
+# 5. BLOCK ACCESS TO SENSITIVE FILES
+# ========================================
+
+# Prevent access to .git, .env, config files, etc.
+<FilesMatch "^(\.git|\.env|composer\.json|package\.json|README\.md|LICENSE)">
+    Require all denied
 </FilesMatch>
 
-<FilesMatch "\.(css|js|jpg|jpeg|png|gif|svg|ico)$">
-    Header set Cache-Control "max-age=2592000, public"
-</FilesMatch>
+# Prevent access to .htaccess and .htpasswd
+<Files ".ht*">
+    Require all denied
+</Files>
+
+# ========================================
+# 6. BLOCK BAD BOTS AND SCRAPERS
+# ========================================
+
+SetEnvIfNoCase User-Agent ".*(AhrefsBot|SemrushBot|MJ12bot|DotBot|BLEXBot|Grapeshot|PetalBot|AspiegelBot|DataForSeoBot|SeznamBot).*" bad_bot
+
+<Limit GET POST>
+    Order Allow,Deny
+    Allow from all
+    Deny from env=bad_bot
+</Limit>
+
+# ========================================
+# 7. PREVENT HOTLINKING (Image Theft)
+# ========================================
+
+# Uncomment to prevent other sites from using your images
+# RewriteCond %{HTTP_REFERER} !^$
+# RewriteCond %{HTTP_REFERER} !^https?://(www\.)?yourdomain\.com [NC]
+# RewriteRule \.(jpg|jpeg|png|gif|svg|webp)$ - [F,NC]
+
+# ========================================
+# 8. CUSTOM ERROR PAGES (Optional)
+# ========================================
+
+# Uncomment to set custom error pages
+# ErrorDocument 404 /404.html
+# ErrorDocument 403 /403.html
+# ErrorDocument 500 /500.html
+
+# ========================================
+# 9. COMPRESSION (Performance)
+# ========================================
+
+<IfModule mod_deflate.c>
+    # Compress text-based files for faster loading
+    AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css text/javascript application/javascript application/json application/xml
+</IfModule>
+
+# ========================================
+# 10. FORCE HTTPS (Uncomment when SSL is installed)
+# ========================================
+
+# RewriteCond %{HTTPS} off
+# RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R=301,L]
