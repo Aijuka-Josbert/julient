@@ -1,5 +1,5 @@
 /* ==========================================================================
-   validation.js — contact form validation
+   validation.js — contact form validation + email sending via EmailJS
    ========================================================================== */
 
 (function () {
@@ -10,6 +10,7 @@
 
   var successMsg = document.getElementById("formSuccess");
 
+  // --- Validation rules ---
   var rules = {
     fullName: function (v) { return v.trim().length >= 2 || "Please enter your full name."; },
     email: function (v) {
@@ -37,6 +38,7 @@
     }
   }
 
+  // --- Attach blur/input events ---
   ["fullName", "email", "message"].forEach(function (name) {
     var field = form.elements[name];
     field.addEventListener("blur", function () { validateField(field); });
@@ -45,8 +47,11 @@
     });
   });
 
+  // --- Submit handler ---
   form.addEventListener("submit", function (e) {
     e.preventDefault();
+
+    // Validate all fields
     var valid = true;
     ["fullName", "email", "message"].forEach(function (name) {
       if (!validateField(form.elements[name])) valid = false;
@@ -59,16 +64,44 @@
       return;
     }
 
+    // --- Prepare data for EmailJS ---
+    var templateParams = {
+      fullName: form.elements.fullName.value.trim(),
+      email: form.elements.email.value.trim(),
+      phone: form.elements.phone.value.trim(),
+      area: form.elements.area.value || "Not specified",
+      message: form.elements.message.value.trim()
+    };
+
     var submitBtn = form.querySelector("button[type='submit']");
     var original = submitBtn.textContent;
     submitBtn.textContent = "Sending...";
     submitBtn.disabled = true;
+    successMsg.hidden = true;
 
-    setTimeout(function () {
-      successMsg.hidden = false;
-      form.reset();
-      submitBtn.textContent = original;
-      submitBtn.disabled = false;
-    }, 900);
+    // --- Send via EmailJS ---
+    // Your EmailJS credentials – DO NOT CHANGE THESE
+    var SERVICE_ID = "service_y9oouy9";
+    var TEMPLATE_ID = "template_tqm3o8m";
+
+    emailjs.send(SERVICE_ID, TEMPLATE_ID, templateParams)
+      .then(function(response) {
+        // Success
+        successMsg.textContent = "Thank you. Your message has been sent successfully. I'll reply within one business day.";
+        successMsg.hidden = false;
+        form.reset();
+        submitBtn.textContent = original;
+        submitBtn.disabled = false;
+
+        // Scroll to success message so user can see it
+        successMsg.scrollIntoView({ behavior: "smooth", block: "center" });
+      })
+      .catch(function(error) {
+        // Error
+        alert("Sorry, there was an error sending your message. Please try again later or contact me directly at tuhaisejuliet6@gmail.com.");
+        console.error("EmailJS error:", error);
+        submitBtn.textContent = original;
+        submitBtn.disabled = false;
+      });
   });
 })();

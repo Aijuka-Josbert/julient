@@ -428,6 +428,21 @@ section.section {
   justify-content: space-between;
   gap: 20px;
 }
+/* Brand logo image */
+.brand-logo {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+  border: 2px solid var(--gold);
+  flex-shrink: 0;
+  transition: border-color 0.3s var(--ease);
+}
+
+.brand:hover .brand-logo {
+  border-color: var(--gold-light);
+}
 .brand {
   display: flex;
   align-items: center;
@@ -1921,4 +1936,8 @@ section.section {
 .scroll-top svg {
   width: 18px;
   height: 18px;
+}
+
+.content-page {
+  padding-top: 140px; /* accounts for fixed header + extra breathing room */
 }
