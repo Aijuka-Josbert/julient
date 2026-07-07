@@ -228,13 +228,10 @@ section.section {
 /* ============ Placeholder imagery (fallback) ============ */
 .img-placeholder {
   position: relative;
-  background:
-    repeating-linear-gradient(
-      135deg,
-      rgba(15, 45, 82, 0.05) 0 12px,
-      rgba(15, 45, 82, 0.02) 12px 24px
-    ),
-    var(--white);
+  background: transparent;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   border: 1px dashed rgba(15, 45, 82, 0.22);
   border-radius: var(--radius-md);
   display: flex;
@@ -261,6 +258,7 @@ section.section {
   background: rgba(255, 255, 255, 0.75);
   padding: 4px 8px;
   border-radius: 4px;
+  -webkit-backdrop-filter: blur(3px);
   backdrop-filter: blur(3px);
 }
 [data-theme="dark"] .img-placeholder::before {
@@ -415,8 +413,8 @@ section.section {
 }
 .site-header.scrolled {
   background: rgba(247, 248, 250, 0.72);
-  backdrop-filter: blur(14px) saturate(160%);
   -webkit-backdrop-filter: blur(14px) saturate(160%);
+  backdrop-filter: blur(14px) saturate(160%);
   box-shadow: 0 1px 0 rgba(15, 45, 82, 0.08);
   padding: 8px 0;
 }
@@ -655,6 +653,7 @@ section.section {
     rgba(255, 255, 255, 0.02)
   );
   border: 1px solid rgba(255, 255, 255, 0.18);
+  -webkit-backdrop-filter: blur(6px);
   backdrop-filter: blur(6px);
 }
 .portrait-image {
@@ -881,6 +880,19 @@ section.section {
   border-bottom: 1.5px solid rgba(200, 164, 93, 0.25);
   font-weight: 600;
 }
+.timeline-group-spaced {
+  margin-top: 32px;
+}
+
+.institution-heading {
+  font-family: var(--font-num);
+  font-size: 11px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin: 0 0 10px 0;
+  font-weight: 600;
+}
 
 .timeline-item {
   display: flex;
@@ -1000,6 +1012,7 @@ section.section {
   transform: translateX(4px);
 }
 
+
 /* ============ Why choose ============ */
 .why-grid {
   display: grid;
@@ -1043,11 +1056,7 @@ section.section {
   background: rgba(15, 45, 82, 0.16);
   transform: translateX(-50%);
 }
-.timeline-item-lg {
-  position: relative;
-  width: 50%;
-  padding: 0 46px 56px;
-}
+
 .timeline-item-lg.left {
   left: 0;
   text-align: right;
@@ -1056,28 +1065,138 @@ section.section {
   left: 50%;
   text-align: left;
 }
-.timeline-dot {
-  position: absolute;
-  top: 4px;
-  width: 12px;
-  height: 12px;
-  background: var(--gold);
-  border-radius: 50%;
-  box-shadow: 0 0 0 5px var(--bg-alt);
-}
+
 .timeline-item-lg.left .timeline-dot {
   right: -6px;
 }
 .timeline-item-lg.right .timeline-dot {
   left: -6px;
 }
-.timeline-content h3 {
-  font-size: 18px;
-  margin: 4px 0 8px;
+
+/* ============ Career Timeline (Upgraded – isolated from About) ============ */
+.timeline {
+  position: relative;
+  max-width: 900px;
+  margin: 56px auto 0;
+  padding: 0 20px;
 }
-.timeline-content p {
-  font-size: 14px;
+
+/* Vertical line – softer gold gradient */
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(to bottom, transparent, var(--gold-light), transparent);
+  transform: translateX(-50%);
+  opacity: 0.5;
+}
+
+/* Each timeline item – isolated from About */
+.timeline .timeline-item {
+  position: relative;
+  width: 50%;
+  padding: 0 40px 60px;
+  box-sizing: border-box;
+}
+
+.timeline .timeline-item.left {
+  left: 0;
+  text-align: right;
+  padding-right: 50px;
+}
+
+.timeline .timeline-item.right {
+  left: 50%;
+  text-align: left;
+  padding-left: 50px;
+}
+
+/* Dot – larger with glow */
+.timeline .timeline-dot {
+  position: absolute;
+  top: 8px;
+  width: 18px;
+  height: 18px;
+  background: var(--gold);
+  border-radius: 50%;
+  box-shadow: 0 0 0 4px var(--bg-alt), 0 0 0 6px rgba(200, 164, 93, 0.2);
+  z-index: 2;
+}
+
+.timeline .timeline-item.left .timeline-dot {
+  right: -9px;
+}
+
+.timeline .timeline-item.right .timeline-dot {
+  left: -9px;
+}
+
+/* Card-style content */
+.timeline .timeline-content {
+  background: var(--white);
+  padding: 24px 30px;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid rgba(15, 45, 82, 0.06);
+  transition: transform 0.3s var(--ease), box-shadow 0.3s var(--ease);
+}
+
+.timeline .timeline-content:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+
+[data-theme="dark"] .timeline .timeline-content {
+  background: var(--white);
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+.timeline .timeline-content .mini-year {
+  font-family: var(--font-num);
+  font-weight: 700;
+  font-size: 16px;
+  color: var(--gold);
+  display: inline-block;
+  margin-bottom: 6px;
+}
+
+.timeline .timeline-content h3 {
+  font-size: 20px;
+  margin: 4px 0 10px;
+  font-weight: 700;
+}
+
+.timeline .timeline-content p {
+  font-size: 15px;
   margin: 0;
+  line-height: 1.7;
+  color: var(--text-light);
+}
+
+/* Responsive – stack on mobile */
+@media (max-width: 700px) {
+  .timeline::before {
+    left: 20px;
+  }
+  .timeline .timeline-item,
+  .timeline .timeline-item.left,
+  .timeline .timeline-item.right {
+    width: 100%;
+    left: 0 !important;
+    text-align: left !important;
+    padding: 0 0 40px 50px !important;
+  }
+  .timeline .timeline-item.left .timeline-dot,
+  .timeline .timeline-item.right .timeline-dot {
+    left: 11px !important;
+    right: auto !important;
+  }
+  .timeline .timeline-content {
+    padding: 20px;
+  }
 }
 
 /* ============ Gallery ============ */
@@ -1121,6 +1240,24 @@ section.section {
   aspect-ratio: 4/3;
   border-radius: var(--radius-md);
   transition: transform 0.5s var(--ease);
+}
+.gallery-photo-court-a {
+  background-image: url("../img/lawsmile.jpeg");
+}
+.gallery-photo-conference-a {
+  background-image: url("../img/dorothy.jpeg");
+}
+.gallery-photo-community-a {
+  background-image: url("../img/smaert.jpeg");
+}
+.gallery-photo-court-b {
+  background-image: url("../img/aunt1.jpeg");
+}
+.gallery-photo-conference-b {
+  background-image: url("../img/aunt.jpeg");
+}
+.gallery-photo-community-b {
+  background-image: url("../img/family.jpg");
 }
 .gallery-item:hover .gallery-placeholder {
   transform: scale(1.04);
@@ -1302,16 +1439,59 @@ section.section {
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 28px;
 }
+
+/* Insight Cards – Image on top, text below */
 .insight-card {
+  display: flex;
+  flex-direction: column;
   background: var(--white);
   border-radius: var(--radius-md);
   overflow: hidden;
   box-shadow: 0 2px 12px rgba(15, 45, 82, 0.06);
-  transition:
-    box-shadow 0.3s var(--ease),
-    transform 0.3s var(--ease);
+  transition: box-shadow 0.3s var(--ease), transform 0.3s var(--ease);
   border: 1px solid rgba(15, 45, 82, 0.06);
+  height: 100%; /* ensures all cards are equal height */
 }
+
+.insight-image {
+  width: 100%;
+  height: 200px; /* fixed height – adjust as needed */
+  object-fit: cover;
+  display: block;
+  flex-shrink: 0; /* prevents image from shrinking */
+}
+
+/* Text area – fills the rest of the card */
+.insight-card .insight-cat {
+  display: inline-block;
+  margin: 20px 24px 0;
+  font-family: var(--font-num);
+  font-size: 11.5px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #d4b469;
+  font-weight: 600;
+}
+
+.insight-card h3 {
+  font-size: 19px;
+  margin: 10px 24px 8px;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.insight-card p {
+  font-size: 15px;
+  margin: 0 24px 14px;
+  line-height: 1.6;
+  flex: 1; /* pushes the "Read More" to the bottom if needed */
+}
+
+.insight-card .card-link {
+  margin: 0 24px 24px;
+  align-self: flex-start;
+}
+
 .insight-card:hover {
   box-shadow: 0 8px 28px rgba(15, 45, 82, 0.1);
   transform: translateY(-5px);
@@ -1321,16 +1501,7 @@ section.section {
   aspect-ratio: 16/10;
   border: none;
 }
-.insight-card .insight-cat {
-  display: inline-block;
-  margin: 22px 24px 0;
-  font-family: var(--font-num);
-  font-size: 11.5px;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: #d4b469;
-  font-weight: 600;
-}
+
 .insight-card h3 {
   font-size: 19px;
   margin: 12px 24px 10px;

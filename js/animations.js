@@ -175,6 +175,7 @@
     item.addEventListener("click", function () {
       var placeholder = item.querySelector(".img-placeholder");
       var label = placeholder.getAttribute("data-label");
+      lightboxImg.style.backgroundImage = window.getComputedStyle(placeholder).backgroundImage;
       lightboxImg.setAttribute("data-label", label);
       lightboxCaption.textContent = label;
       lightbox.classList.add("open");
