@@ -10,14 +10,60 @@
 
   var successMsg = document.getElementById("formSuccess");
 
-  // --- Validation rules ---
+  // --- Get field references ---
+  var fullNameField = document.getElementById("fullName");
+  var emailField = document.getElementById("email");
+  var phoneField = document.getElementById("phone");
+  var messageField = document.getElementById("message");
+
+  // ========================================
+  // 1. REAL-TIME INPUT FILTERING
+  // ========================================
+
+  // Full name: only letters, spaces, hyphens, apostrophes
+  if (fullNameField) {
+    fullNameField.addEventListener("input", function () {
+      this.value = this.value.replace(/[^A-Za-z\s\-']/g, "");
+    });
+  }
+
+  // Phone: only digits (remove anything else instantly)
+  if (phoneField) {
+    phoneField.addEventListener("input", function () {
+      this.value = this.value.replace(/\D/g, "");
+    });
+  }
+
+  // Email & message are not filtered – they can contain any characters.
+
+  // ========================================
+  // 2. VALIDATION RULES (for blur/submit)
+  // ========================================
+
   var rules = {
-    fullName: function (v) { return v.trim().length >= 2 || "Please enter your full name."; },
+    fullName: function (v) {
+      var trimmed = v.trim();
+      if (trimmed.length < 2) return "Please enter your full name (at least 2 characters).";
+      // Only letters, spaces, hyphens, apostrophes (already enforced by filter, but re-check)
+      if (!/^[A-Za-z\s\-']+$/.test(trimmed)) {
+        return "Full name can only contain letters, spaces, hyphens, and apostrophes.";
+      }
+      return true;
+    },
     email: function (v) {
       var re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
       return re.test(v.trim()) || "Please enter a valid email address.";
     },
-    message: function (v) { return v.trim().length >= 10 || "Please add a few more details (10+ characters)."; }
+    phone: function (v) {
+      var digits = v.trim();
+      // Digits only – already enforced by filter, but re-check
+      if (!/^\d+$/.test(digits)) return "Phone number must contain only digits.";
+      if (digits.length < 7) return "Phone number must be at least 7 digits.";
+      return true;
+    },
+    message: function (v) {
+      return v.trim().length >= 10 || "Please add a few more details (10+ characters).";
+    }
   };
 
   function validateField(field) {
@@ -38,23 +84,34 @@
     }
   }
 
-  // --- Attach blur/input events ---
-  ["fullName", "email", "message"].forEach(function (name) {
+  // ========================================
+  // 3. ATTACH BLUR / INPUT EVENTS
+  // ========================================
+
+  ["fullName", "email", "phone", "message"].forEach(function (name) {
     var field = form.elements[name];
+    if (!field) return;
     field.addEventListener("blur", function () { validateField(field); });
     field.addEventListener("input", function () {
-      if (field.closest(".form-field").classList.contains("invalid")) validateField(field);
+      if (field.closest(".form-field").classList.contains("invalid")) {
+        validateField(field);
+      }
     });
   });
 
-  // --- Submit handler ---
+  // ========================================
+  // 4. SUBMIT HANDLER
+  // ========================================
+
   form.addEventListener("submit", function (e) {
     e.preventDefault();
 
     // Validate all fields
     var valid = true;
-    ["fullName", "email", "message"].forEach(function (name) {
-      if (!validateField(form.elements[name])) valid = false;
+    ["fullName", "email", "phone", "message"].forEach(function (name) {
+      var field = form.elements[name];
+      if (!field) return;
+      if (!validateField(field)) valid = false;
     });
 
     if (!valid) {
@@ -66,11 +123,11 @@
 
     // --- Prepare data for EmailJS ---
     var templateParams = {
-      fullName: form.elements.fullName.value.trim(),
-      email: form.elements.email.value.trim(),
-      phone: form.elements.phone.value.trim(),
-      area: form.elements.area.value || "Not specified",
-      message: form.elements.message.value.trim()
+      fullName: fullNameField.value.trim(),
+      email: emailField.value.trim(),
+      phone: phoneField.value.trim(), // already only digits
+      area: document.getElementById("area").value || "Not specified",
+      message: messageField.value.trim()
     };
 
     var submitBtn = form.querySelector("button[type='submit']");
@@ -80,24 +137,19 @@
     successMsg.hidden = true;
 
     // --- Send via EmailJS ---
-    // Your EmailJS credentials – DO NOT CHANGE THESE
     var SERVICE_ID = "service_y9oouy9";
     var TEMPLATE_ID = "template_tqm3o8m";
 
     emailjs.send(SERVICE_ID, TEMPLATE_ID, templateParams)
       .then(function(response) {
-        // Success
         successMsg.textContent = "Thank you. Your message has been sent successfully. I'll reply within one business day.";
         successMsg.hidden = false;
         form.reset();
         submitBtn.textContent = original;
         submitBtn.disabled = false;
-
-        // Scroll to success message so user can see it
         successMsg.scrollIntoView({ behavior: "smooth", block: "center" });
       })
       .catch(function(error) {
-        // Error
         alert("Sorry, there was an error sending your message. Please try again later or contact me directly at tuhaisejuliet6@gmail.com.");
         console.error("EmailJS error:", error);
         submitBtn.textContent = original;
