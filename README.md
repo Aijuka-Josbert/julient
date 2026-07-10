@@ -37,6 +37,3 @@ A modern, responsive, and accessible legal counsel website for **Juliet Tuhaise*
 - ✅ robots.txt & sitemap.xml for search engines
 - ✅ Privacy Policy & Terms of Service (single `legal.html` page)
 
----
-
-## 📁 Project Structure

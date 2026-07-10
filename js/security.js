@@ -2,13 +2,13 @@
    security.js — Disable Developer Tools and Right-Click
    ========================================================================== */
 
-(function() {
+(function () {
   "use strict";
 
   // ============================================
   // 1. DISABLE RIGHT-CLICK
   // ============================================
-  document.addEventListener('contextmenu', function(e) {
+  document.addEventListener('contextmenu', function (e) {
     e.preventDefault();
     return false;
   });
@@ -16,7 +16,7 @@
   // ============================================
   // 2. DISABLE KEYBOARD SHORTCUTS
   // ============================================
-  document.addEventListener('keydown', function(e) {
+  document.addEventListener('keydown', function (e) {
     // F12
     if (e.key === 'F12' || e.keyCode === 123) {
       e.preventDefault();

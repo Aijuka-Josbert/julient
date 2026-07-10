@@ -141,7 +141,7 @@
     var TEMPLATE_ID = "template_tqm3o8m";
 
     emailjs.send(SERVICE_ID, TEMPLATE_ID, templateParams)
-      .then(function(response) {
+      .then(function (response) {
         successMsg.textContent = "Thank you. Your message has been sent successfully. I'll reply within one business day.";
         successMsg.hidden = false;
         form.reset();
@@ -149,7 +149,7 @@
         submitBtn.disabled = false;
         successMsg.scrollIntoView({ behavior: "smooth", block: "center" });
       })
-      .catch(function(error) {
+      .catch(function (error) {
         alert("Sorry, there was an error sending your message. Please try again later or contact me directly at tuhaisejuliet6@gmail.com.");
         console.error("EmailJS error:", error);
         submitBtn.textContent = original;

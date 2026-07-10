@@ -123,7 +123,7 @@
   themeToggle.addEventListener("click", function () {
     var next = htmlEl.getAttribute("data-theme") === "dark" ? "light" : "dark";
     applyTheme(next);
-    try { localStorage.setItem("nabirye-theme", next); } catch (e) {}
+    try { localStorage.setItem("nabirye-theme", next); } catch (e) { }
   });
 
   /* ---------- Cookie consent ---------- */
@@ -141,7 +141,7 @@
 
   function dismissCookieBanner(choice) {
     cookieBanner.classList.remove("show");
-    try { localStorage.setItem("nabirye-cookie-choice", choice); } catch (e) {}
+    try { localStorage.setItem("nabirye-cookie-choice", choice); } catch (e) { }
   }
   cookieAccept.addEventListener("click", function () { dismissCookieBanner("accepted"); });
   cookieDecline.addEventListener("click", function () { dismissCookieBanner("declined"); });
